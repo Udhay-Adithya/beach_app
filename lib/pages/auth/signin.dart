@@ -3,7 +3,7 @@ import 'package:page_transition/page_transition.dart';
 
 import '../../componenets/my_button.dart';
 import '../../componenets/theme_switch_button.dart';
-import '../features/home.dart';
+import '../features/bottom_nav_bar.dart';
 import 'signup.dart';
 
 class SignIn extends StatefulWidget {
@@ -174,10 +174,10 @@ class _SignInState extends State<SignIn> {
                       Navigator.push(
                         context,
                         PageTransition(
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                           type: PageTransitionType.fade,
-                          child: const Home(),
+                          child: const MyBNB(),
                         ),
                       );
                     },
@@ -241,7 +241,7 @@ class _SignInState extends State<SignIn> {
                     Navigator.push(
                       context,
                       PageTransition(
-                        duration: Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                         type: PageTransitionType.fade,
                         child: const Signup(),

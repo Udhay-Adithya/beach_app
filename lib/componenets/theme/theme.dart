@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'palette.dart';
 
 // Define your light mode theme
@@ -11,10 +10,11 @@ ThemeData darkTheme = ThemeData(
   colorScheme: const ColorScheme.dark(
     surface: darkBG,
     primary: darkPrimary,
+    primaryContainer: darkPrimaryContainer,
     secondary: darkSecondary,
     tertiary: darkTertiary,
   ),
-  textTheme: GoogleFonts.poppinsTextTheme(),
+  fontFamily: 'Poppins',
 );
 
 // Define your dark mode theme
@@ -26,8 +26,9 @@ ThemeData lightTheme = ThemeData(
   colorScheme: const ColorScheme.light(
     surface: lightBG,
     primary: lightPrimary,
+    primaryContainer: lightPrimaryContainer,
     secondary: lightSecondary,
     tertiary: lightTertiary,
   ),
-  textTheme: GoogleFonts.poppinsTextTheme(),
+  fontFamily: 'Poppins',
 );

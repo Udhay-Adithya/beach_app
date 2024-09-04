@@ -1,9 +1,10 @@
 import 'package:beach_app/firebase_options.dart';
-import 'package:beach_app/pages/auth/signin.dart';
 import 'package:beach_app/providers/theme_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'pages/features/bottom_nav_bar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,9 +33,9 @@ class _MyAppState extends ConsumerState<MyApp> {
     final theme = ref.watch(themeProvider);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Beach Alerts',
       theme: theme,
-      home: const SignIn(),
+      home: const MyBNB(),
     );
   }
 }

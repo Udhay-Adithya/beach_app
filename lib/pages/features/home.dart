@@ -6,120 +6,104 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                // Handle the onTap action for Home
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text('Profile'),
-              onTap: () {
-                // Handle the onTap action for Profile
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {
-                // Handle the onTap action for Settings
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
             backgroundColor: Theme.of(context).colorScheme.surface,
             expandedHeight: 100,
-            leading: Builder(builder: (context) {
-              return IconButton(
-                icon: const Icon(
-                  size: 22,
-                  Icons.sort,
-                ),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            }),
-            actions: [
-              IconButton(
-                icon: const Icon(
-                  Icons.search,
-                ),
-                onPressed: () {},
+            flexibleSpace: FlexibleSpaceBar(
+              titlePadding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Find your\nfavourite place",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Container(
+                      width: 40, // Diameter of the circle
+                      height: 40,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey
+                            .withOpacity(0.2), // Background color of the circle
+                      ),
+                      child: IconButton(
+                        icon: const Icon(
+                          Icons.notifications_none_outlined,
+                          size: 22,
+                        ),
+                        splashRadius: 30, // Set the splash radius
+                        color: Colors.black, // Icon color
+                        onPressed: () {
+                          // Your onPressed functionality
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-            title: Text(
-              "My Profile",
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
             ),
-            centerTitle: true,
-            flexibleSpace: const FlexibleSpaceBar(
-              background: Padding(
-                padding: EdgeInsets.only(top: 100.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [],
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Theme.of(context).colorScheme.primaryContainer,
                 ),
+                height: 350,
+                width: 50,
               ),
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              height: 200,
-              width: 50,
-              color: Colors.blue,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.blue,
+                ),
+                height: 350,
+                width: 50,
+              ),
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              height: 200,
-              width: 50,
-              color: Colors.blue,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.blue,
+                ),
+                height: 350,
+                width: 50,
+              ),
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              height: 200,
-              width: 50,
-              color: Colors.blue,
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Container(
-              height: 200,
-              width: 50,
-              color: Colors.blue,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.blue,
+                ),
+                height: 350,
+                width: 50,
+              ),
             ),
           ),
         ],
