@@ -49,7 +49,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'beach-app-d8757.appspot.com',
     measurementId: 'G-Q7XBRY8EYP',
   );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAmWnhQ-lNHQvCdF96L-S23c76FvbGk0kM',
     appId: '1:357782052236:android:4e486579ddaa9f43390aa9',
