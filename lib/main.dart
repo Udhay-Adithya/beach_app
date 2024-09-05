@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'pages/features/bottom_nav_bar.dart';
+import 'pages/auth/auth_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Beach Alerts',
       theme: theme,
-      home: const MyBNB(),
+      home: const AuthPage(),
     );
   }
 }
