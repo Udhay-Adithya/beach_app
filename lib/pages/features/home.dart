@@ -48,7 +48,6 @@ class Home extends StatelessWidget {
                         splashRadius: 30,
                         color: Colors.black,
                         onPressed: () {
-                          // Your onPressed functionality
                         },
                       ),
                     ),
@@ -60,7 +59,7 @@ class Home extends StatelessWidget {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                final beach = beachData[index]; // Get each beach data
+                final beach = beachData[index];
 
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -77,16 +76,16 @@ class Home extends StatelessWidget {
                     width: double.infinity,
                     child: Stack(
                       children: [
-                        const Positioned(
+                        Positioned(
                           top: 10,
                           right: 10,
-                          child: GlassHeart(),
+                          child: GlassHeart(beach),
                         ),
                         Positioned(
                           bottom: 10,
                           left: 10,
                           right: 10,
-                          child: BeachTag(beach['name']!, beach['location']!),
+                          child: BeachTag(beach),
                         ),
                       ],
                     ),

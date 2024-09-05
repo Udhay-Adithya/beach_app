@@ -2,11 +2,9 @@ import 'package:beach_app/componenets/outward_arrow.dart';
 import 'package:flutter/material.dart';
 
 class BeachTag extends StatelessWidget {
-  final String name;
-  final String place;
+  final Map<String, String> currentBeach;
   const BeachTag(
-    this.name,
-    this.place, {
+    this.currentBeach, {
     super.key,
   });
 
@@ -31,7 +29,7 @@ class BeachTag extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 4.0),
                   child: Text(
-                    name,
+                    currentBeach["name"]!,
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 16,
@@ -42,7 +40,7 @@ class BeachTag extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 4.0),
                   child: Text(
-                    place,
+                    currentBeach["location"]!,
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.tertiary,
                       fontSize: 14,
@@ -53,7 +51,7 @@ class BeachTag extends StatelessWidget {
               ],
             ),
           ),
-          const OutwardArrow(),
+          OutwardArrow(currentBeach),
         ],
       ),
     );

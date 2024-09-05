@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:page_transition/page_transition.dart';
+import '../pages/features/detailed_beach_view_page.dart';
 
-class OutwardArrow extends StatelessWidget {
-  const OutwardArrow({super.key});
+class OutwardArrow extends ConsumerStatefulWidget {
+  final Map<String, String> beachInfo;
+  const OutwardArrow(this.beachInfo, {super.key});
 
+  @override
+  ConsumerState<OutwardArrow> createState() => _OutwardArrowState();
+}
+
+class _OutwardArrowState extends ConsumerState<OutwardArrow> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,8 +30,18 @@ class OutwardArrow extends StatelessWidget {
           ),
           splashRadius: 30,
           color: Colors.black,
-          onPressed: () {
-            // Your onPressed functionality
+          onPressed: () async {
+            Navigator.push(
+              context,
+              PageTransition(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+                type: PageTransitionType.fade,
+                child: DetailedBeachView(
+                  beachInfo: widget.beachInfo,
+                ),
+              ),
+            );
           },
         ),
       ),
